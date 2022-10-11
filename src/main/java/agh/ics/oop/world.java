@@ -18,7 +18,8 @@ public class world {
                 case RIGHT:
                     System.out.println("zwierzak idze w prawo");
                     break;
-
+                default:
+                    break;
                 }
         }
     }

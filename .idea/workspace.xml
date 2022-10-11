@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="966c905c-eaae-4a5f-b0e8-14d59cfdac2e" name="Changes" comment="przerwa 10/24">
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Direction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="966c905c-eaae-4a5f-b0e8-14d59cfdac2e" name="Changes" comment="18/24">
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/world.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/world.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665443960823</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="18/24">
+      <created>1665480712541</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665480712541</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,6 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="przerwa 10/24" />
-    <option name="LAST_COMMIT_MESSAGE" value="przerwa 10/24" />
+    <MESSAGE value="18/24" />
+    <option name="LAST_COMMIT_MESSAGE" value="18/24" />
   </component>
 </project>
