@@ -46,5 +46,11 @@ public class World {
             run(directions);
         }
         System.out.println("end");
+        Vector2d position1 = new Vector2d(1,2);
+        System.out.println(position1);
+        Vector2d position2 = new Vector2d(-2,1);
+        System.out.println(position2);
+        System.out.println(position1.add(position2));
+        System.out.println(MapDirection.toString(MapDirection.previous(MapDirection.NORTH)));
     }
 }
