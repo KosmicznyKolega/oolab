@@ -2,20 +2,20 @@ package agh.ics.oop;
 
 public class World {
 
-    public static Direction[] changeDir(String argument) {
-        switch (argument){
+    public static Direction changeDir(String argument) {
+        switch (argument) {
             case "f":
-                return new Direction[]{Direction.FORWARD};
+                return Direction.FORWARD;
             case "b":
-                return new Direction[]{Direction.BACKWARDS};
+                return Direction.BACKWARDS;
             case "l":
-                return new Direction[]{Direction.LEFT};
+                return Direction.LEFT;
             case "r":
-                return new Direction[]{Direction.RIGHT};
+                return Direction.RIGHT;
             default:
                 break;
         }
-    return new Direction[]{};
+        return null;
     }
 
     public static void run(Direction[] stuff) {
@@ -41,14 +41,17 @@ public class World {
 
     public static void main(String[] args) {
         System.out.println("start");
+        Direction[] directions = new Direction[args.length];
+        int iterator=0;
         for (String argument : args) {
-            Direction[] directions = changeDir(argument);
-            run(directions);
+            directions[iterator]=changeDir(argument);
+            iterator=iterator+1;
         }
+        run(directions);
         System.out.println("end");
-        Vector2d position1 = new Vector2d(1,2);
+        Vector2d position1 = new Vector2d(1, 2);
         System.out.println(position1);
-        Vector2d position2 = new Vector2d(-2,1);
+        Vector2d position2 = new Vector2d(-2, 1);
         System.out.println(position2);
         System.out.println(position1.add(position2));
         System.out.println(MapDirection.toString(MapDirection.previous(MapDirection.NORTH)));

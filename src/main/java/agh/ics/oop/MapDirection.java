@@ -20,33 +20,33 @@ public enum MapDirection {
         return null;
     }
 
-    private static int getI(MapDirection x) {
-        int i = 0;
+    private static int getIndex(MapDirection x) {
+        int Index = 0;
         switch (x) {
             case NORTH:
-                i = 0;
+                Index = 0;
                 break;
             case EAST:
-                i = 1;
+                Index = 1;
                 break;
             case SOUTH:
-                i = 2;
+                Index = 2;
                 break;
             case WEST:
-                i = 3;
+                Index = 3;
                 break;
         }
-        return i;
+        return Index;
     }
 
     public static MapDirection next(MapDirection dir) {
-        int i = getI(dir);
+        int i = getIndex(dir);
         MapDirection[] tab = {MapDirection.NORTH, MapDirection.EAST, MapDirection.SOUTH, MapDirection.WEST};
         return tab[(i + 1) % 4];
     }
 
     public static MapDirection previous(MapDirection dir) {
-        int i = getI(dir);
+        int i = getIndex(dir);
         MapDirection[] tab = {MapDirection.NORTH, MapDirection.EAST, MapDirection.SOUTH, MapDirection.WEST};
         return tab[(i + 3) % 4];
     }
