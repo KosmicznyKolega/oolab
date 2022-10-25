@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="966c905c-eaae-4a5f-b0e8-14d59cfdac2e" name="Changes" comment="lab2">
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/OptionsParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/AnimalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/OptionsParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/MapDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/MapDirection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +106,7 @@
       <recent name="agh.ics.oop" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.oolab [run]">
+  <component name="RunManager" selected="Gradle.OptionsParserTest">
     <configuration name="World" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="agh.ics.oop.World" />
       <module name="oolab.main" />
@@ -117,7 +120,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MoveDirectionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AnimalTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -130,7 +133,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.MoveDirectionTest&quot;" />
+            <option value="&quot;agh.ics.oop.AnimalTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -140,7 +143,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="MoveDirectionTest.someTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="OptionsParserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -153,7 +156,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.MoveDirectionTest.someTest&quot;" />
+            <option value="&quot;agh.ics.oop.OptionsParserTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -163,7 +166,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Vector2dTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="OptionsParserTest.parseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -176,7 +179,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.Vector2dTest&quot;" />
+            <option value="&quot;agh.ics.oop.OptionsParserTest.parseTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -209,11 +212,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.OptionsParserTest" />
+        <item itemvalue="Gradle.OptionsParserTest.parseTest" />
+        <item itemvalue="Gradle.AnimalTest" />
         <item itemvalue="Gradle.oolab [run]" />
         <item itemvalue="Application.World" />
-        <item itemvalue="Gradle.Vector2dTest" />
-        <item itemvalue="Gradle.MoveDirectionTest.someTest" />
-        <item itemvalue="Gradle.MoveDirectionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -275,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665764176702</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="lab2">
+      <created>1665772870133</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665772870133</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,5 +307,16 @@
     <MESSAGE value="lab2 bez testów" />
     <MESSAGE value="lab2" />
     <option name="LAST_COMMIT_MESSAGE" value="lab2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/agh/ics/oop/OptionsParser.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
