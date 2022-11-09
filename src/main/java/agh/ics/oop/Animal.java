@@ -1,16 +1,29 @@
 package agh.ics.oop;
 
 public class Animal {
-    private Vector2d position = new Vector2d(2, 2);
+    private Vector2d position;
     private MapDirection orientation = MapDirection.NORTH;
+    private IWorldMap map;
+
+    public Animal(IWorldMap map){
+        this.map=map;
+        this.position=new Vector2d(2,2);
+    }
+    public Animal(IWorldMap map, Vector2d initialPosition) {
+        this.map = map;
+        this.position = initialPosition;
+    }
 
     @Override
     public String toString() {
-        return "Animal{" +
-                "position=" + position +
-                ", orientation=" + orientation +
-                '}';
-    }
+        switch (orientation){
+            case EAST -> { return "E"; }
+            case WEST -> { return "W"; }
+            case NORTH -> { return "N"; }
+            case SOUTH -> { return "S"; }
+            }
+        return null;}
+
 
     public boolean isAt(Vector2d currentPosition) {
         return (currentPosition.equals(position));
@@ -24,26 +37,30 @@ public class Animal {
         return position;
     }
 
-    private void moveForwardOrBackward(boolean forward) {
-        if (((orientation.equals(MapDirection.EAST) && forward) || (orientation.equals(MapDirection.WEST) && !forward)) && position.precedes(new Vector2d(3, 4))) {
-            position = position.add(new Vector2d(1, 0));
-        } else if (((orientation == MapDirection.NORTH && forward) || (orientation == MapDirection.SOUTH && !forward)) && position.precedes(new Vector2d(4, 3))) {
-            position = position.add(new Vector2d(0, 1));
-        } else if (((orientation == MapDirection.SOUTH && forward) || (orientation == MapDirection.NORTH && !forward)) && position.follows(new Vector2d(0, 1))) {
-            position = position.subtract(new Vector2d(0, 1));
-        } else if (((orientation == MapDirection.WEST && forward) || (orientation == MapDirection.EAST && !forward)) && position.follows(new Vector2d(1, 0))) {
-            position = position.subtract(new Vector2d(1, 0));
-        }
+    private boolean isContained(Vector2d newPosition) {
+        return map.canMoveTo(newPosition);
     }
+
+    private void changePosition(MoveDirection direction) {
+        Vector2d VectorOfOrientation = orientation.toUnitVector(orientation);
+        if (isContained(position.add(VectorOfOrientation))&& direction.equals(MoveDirection.FORWARD)) {
+                position = position.add(VectorOfOrientation);
+            }
+        else if (isContained(position.subtract(VectorOfOrientation))&& direction.equals(MoveDirection.BACKWARD)) {
+                position = position.subtract(VectorOfOrientation);
+            }
+        }
+
 
     public void move(MoveDirection direction) {
         switch (direction) {
             case LEFT -> orientation = orientation.previous(orientation);
             case RIGHT -> orientation = orientation.next(orientation);
-            case FORWARD -> moveForwardOrBackward(true);
-            case BACKWARD -> moveForwardOrBackward(false);
+            case FORWARD -> changePosition(MoveDirection.FORWARD);
+            case BACKWARD -> changePosition(MoveDirection.BACKWARD);
         }
     }
+
 
 }
 

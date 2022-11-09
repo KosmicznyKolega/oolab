@@ -41,7 +41,7 @@ public class World {
     }
 
     public static void main(String[] args) {
-        Animal zwierze = new Animal();
+        /* Animal zwierze = new Animal();
         System.out.println(zwierze.toString());
         Scanner obiekt = new Scanner(System.in);
         int length = obiekt.nextInt();
@@ -59,6 +59,12 @@ public class World {
             zwierze.move(kierunki[iterator]);
             iterator=iterator+1;
         }
-        System.out.println(zwierze.toString());
+        System.out.println(zwierze.toString()); */
+        MoveDirection[] directions = new OptionsParser().parse(args);
+        IWorldMap map = new RectangularMap(10, 5);
+        Vector2d[] positions = { new Vector2d(2,2), new Vector2d(3,4) };
+        IEngine engine = new SimulationEngine(directions, map, positions);
+        engine.run();
+        System.out.print(map);
     }
 }

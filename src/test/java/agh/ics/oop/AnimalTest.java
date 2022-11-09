@@ -5,17 +5,26 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AnimalTest {
+
+    RectangularMap map = new RectangularMap(4,4);
+    @Test
+    public void positionTest(){
+        Animal animal = new Animal(map);
+        assertEquals(animal.getOrientation(),MapDirection.NORTH);
+        assertEquals(animal.getPosition(),new Vector2d(2,2));
+
+    }
     @Test
     public void toStringTest(){
-        assertEquals("Animal{position=(2,2), orientation=NORTH}", new Animal().toString());
+        assertEquals("N", new Animal(map).toString());
     }
     @Test
     public void isAtTest(){
-        assertTrue(new Animal().isAt(new Vector2d(2,2)));
+        assertTrue(new Animal(map).isAt(new Vector2d(2,2)));
     }
     @Test
     public void moveTest(){
-        Animal zwierze = new Animal();
+        Animal zwierze = new Animal(map);
         zwierze.move(MoveDirection.RIGHT);
         assertEquals(MapDirection.EAST, zwierze.getOrientation());
         zwierze.move(MoveDirection.LEFT);

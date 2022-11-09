@@ -24,6 +24,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-run{
-    args "f", "f", "r", "l" 
-}
