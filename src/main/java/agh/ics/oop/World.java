@@ -1,5 +1,4 @@
 package agh.ics.oop;
-import java.util.Scanner;
 
 public class World {
 
@@ -41,27 +40,8 @@ public class World {
     }
 
     public static void main(String[] args) {
-        /* Animal zwierze = new Animal();
-        System.out.println(zwierze.toString());
-        Scanner obiekt = new Scanner(System.in);
-        int length = obiekt.nextInt();
-        String[] arrayOfStrings=new String[length];
-        int iterator=0;
-        Scanner obiekt2 = new Scanner(System.in);
-        while (iterator<length){
-            arrayOfStrings[iterator]=obiekt2.nextLine();
-            iterator=iterator+1;
-        }
-        OptionsParser kierunkowacz = new OptionsParser();
-        MoveDirection[] kierunki = kierunkowacz.parse(arrayOfStrings);
-        iterator=0;
-        while (iterator<kierunki.length){
-            zwierze.move(kierunki[iterator]);
-            iterator=iterator+1;
-        }
-        System.out.println(zwierze.toString()); */
         MoveDirection[] directions = new OptionsParser().parse(args);
-        IWorldMap map = new RectangularMap(10, 5);
+        IWorldMap map = new GrassField(10);
         Vector2d[] positions = { new Vector2d(2,2), new Vector2d(3,4) };
         IEngine engine = new SimulationEngine(directions, map, positions);
         engine.run();
