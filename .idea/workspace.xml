@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="966c905c-eaae-4a5f-b0e8-14d59cfdac2e" name="Changes" comment="">
+    <list default="true" id="966c905c-eaae-4a5f-b0e8-14d59cfdac2e" name="Changes" comment="lab06">
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/IPositionChangeObserver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/SimulationEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/SimulationEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/AbstractWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/AbstractWorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/GrassField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/GrassField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/IWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/IWorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/OptionsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/OptionsParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/RectangularMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/RectangularMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Vector2d.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Vector2d.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/agh/ics/oop/AnimalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/AnimalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/agh/ics/oop/OptionsParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/OptionsParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +70,7 @@
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -98,6 +109,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="agh.ics.oop" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="agh.ics.oop.MapDirection" />
     </key>
@@ -105,11 +119,11 @@
       <recent name="agh.ics.oop" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.World">
+  <component name="RunManager" selected="Gradle.OptionsParserTest">
     <configuration name="World" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="agh.ics.oop.World" />
       <module name="oolab.main" />
-      <option name="PROGRAM_PARAMETERS" value="f b r l f f r r f f f f f f f f" />
+      <option name="PROGRAM_PARAMETERS" value="f b r l f f r r f f f f f f f f " />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="agh.ics.oop.*" />
@@ -143,7 +157,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AnimalTest.moveTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AnimalTest.exceptionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -156,7 +170,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.AnimalTest.moveTest&quot;" />
+            <option value="&quot;agh.ics.oop.AnimalTest.exceptionTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -166,7 +180,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AnimalTest.positionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AnimalTest.placeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -179,7 +193,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.AnimalTest.positionTest&quot;" />
+            <option value="&quot;agh.ics.oop.AnimalTest.placeTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -189,7 +203,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="GrassFieldTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="OptionsParserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -202,7 +216,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.GrassFieldTest&quot;" />
+            <option value="&quot;agh.ics.oop.OptionsParserTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -212,7 +226,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RectangularMapTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="OptionsParserTest.exceptionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -225,7 +239,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.RectangularMapTest&quot;" />
+            <option value="&quot;agh.ics.oop.OptionsParserTest.exceptionTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -237,19 +251,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.World" />
-      <item itemvalue="Gradle.GrassFieldTest" />
+      <item itemvalue="Gradle.AnimalTest.exceptionTest" />
+      <item itemvalue="Gradle.AnimalTest.placeTest" />
+      <item itemvalue="Gradle.OptionsParserTest" />
+      <item itemvalue="Gradle.OptionsParserTest.exceptionTest" />
       <item itemvalue="Gradle.AnimalTest" />
-      <item itemvalue="Gradle.RectangularMapTest" />
-      <item itemvalue="Gradle.AnimalTest.moveTest" />
-      <item itemvalue="Gradle.AnimalTest.positionTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.GrassFieldTest" />
-        <item itemvalue="Gradle.RectangularMapTest" />
+        <item itemvalue="Gradle.OptionsParserTest" />
         <item itemvalue="Gradle.AnimalTest" />
-        <item itemvalue="Gradle.AnimalTest.positionTest" />
-        <item itemvalue="Gradle.AnimalTest.moveTest" />
+        <item itemvalue="Gradle.AnimalTest.exceptionTest" />
+        <item itemvalue="Gradle.OptionsParserTest.exceptionTest" />
+        <item itemvalue="Gradle.AnimalTest.placeTest" />
       </list>
     </recent_temporary>
   </component>
@@ -339,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668557140040</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="lab05 poprawiony blad z placeowaniem zwierzat na zwierzetach">
+      <created>1668695836200</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668695836200</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -364,13 +385,17 @@
     <MESSAGE value="lab04" />
     <MESSAGE value="lab05" />
     <MESSAGE value="lab05 poprawiony blad z placeowaniem zwierzat na zwierzetach" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab05 poprawiony blad z placeowaniem zwierzat na zwierzetach" />
+    <MESSAGE value="lab06" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab06" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="GradleRunConfiguration">
         <watch expression="map" language="JAVA" />
         <watch expression="((Animal)((java.util.ArrayList)((RectangularMap)((Animal)((ArrayList)((RectangularMap)map).animals).get(0)).map).animals).get(1)).map" custom="agh.ics.oop.RectangularMap,agh.ics.oop.Animal,java.util.ArrayList" />
+        <watch expression="map" />
+        <watch expression="((GrassField)map).animals" custom="agh.ics.oop.GrassField" />
+        <watch expression="((GrassField)map).animals" custom="agh.ics.oop.GrassField" />
       </configuration>
     </watches-manager>
   </component>

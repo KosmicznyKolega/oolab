@@ -8,22 +8,9 @@ public class RectangularMap extends AbstractWorldMap {
         upperRight = new Vector2d(width, height);
     }
 
-    public String whatToReturn(MapVisualiser map){
-        return map.draw(lowerLeft,upperRight);
-    }
-
     @Override
     public boolean canMoveTo(Vector2d position) {
         return !this.isOccupied(position) && position.follows(lowerLeft) && position.precedes(upperRight);
     }
-
-    @Override
-    public Object objectAt(Vector2d position) {
-        for (Animal animal : animals) {
-            if (animal.isAt(position)) {
-                return animal;
-            }
-        }
-        return null;
-    }
 }
+

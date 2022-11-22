@@ -1,27 +1,39 @@
 package agh.ics.oop;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-abstract class AbstractWorldMap implements IWorldMap {
-    protected ArrayList<Animal> animals = new ArrayList<>();
+abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver{
+    protected Map<Vector2d,Animal> animals = new HashMap<>();
 
     public boolean place(Animal animal) {
-        for (Animal animal1 : animals) {
-            if (animal1.isAt(animal.getPosition())) {
-                return false;
-            }
+        if (animals.get(animal.getPosition())!=null){
+            throw new IllegalArgumentException("there already is an animal there");
         }
-        animals.add(animal);
+        animals.put(animal.getPosition(),animal);
         return true;
     }
 
-    protected String whatToReturn(MapVisualiser map) {
-        return map.draw(new Vector2d(0, 0), new Vector2d(10, 10));
+    protected Vector2d lowestLeft() {
+        return new Vector2d(0, 0);
+    }
+    protected Vector2d uppestRight(){
+        return new Vector2d(10,10);
     }
 
+    protected Object returnAnyOtherObjects(Vector2d position){
+        return null;
+    }
+    public Object objectAt(Vector2d position) {
+        if (animals.get(position)!=null){
+        return animals.get(position);}
+        return returnAnyOtherObjects(position);
+    }
     public String toString() {
         MapVisualiser mapa = new MapVisualiser(this);
-        return whatToReturn(mapa);
+        Vector2d lowestLeftBoundary=lowestLeft();
+        Vector2d upperRightBoundary=uppestRight();
+        return mapa.draw(lowestLeftBoundary,upperRightBoundary);
 
     }
 
@@ -30,11 +42,17 @@ abstract class AbstractWorldMap implements IWorldMap {
     }
 
     public boolean isOccupied(Vector2d position) {
-        for (Animal animal : animals) {
-            if (animal.isAt(position)) {
-                return true;
-            }
+        if(animals.get(position)!=null){
+            return true;
         }
         return checkForAnyOtherObjects(position);
+    }
+
+    @Override
+    public void positionChanged(Vector2d oldPosition, Vector2d newPosition) {
+        if (!newPosition.equals(oldPosition)){
+            animals.put(newPosition, animals.get(oldPosition));
+            animals.remove(oldPosition);
+        }
     }
 }

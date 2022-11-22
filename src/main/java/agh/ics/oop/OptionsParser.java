@@ -25,10 +25,9 @@ public class OptionsParser {
                     answer[iterator] = MoveDirection.RIGHT;
                     break;
                 default:
-                    iterator--;
-                    break;
+                    throw new IllegalArgumentException(s + " is not legal move specification");
             }
-            iterator++;
+        iterator++;
         }
         return answer;
     }

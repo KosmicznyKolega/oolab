@@ -34,4 +34,24 @@ public class AnimalTest {
         zwierze.move(MoveDirection.BACKWARD);
         assertEquals(new Vector2d(2,2),zwierze.getPosition());
     }
+    @Test
+    public void placeTest(){
+
+        map.place(new Animal(map));
+        map.place(new Animal(map,new Vector2d(2,3)));
+        assertTrue(map.isOccupied(new Vector2d(2,2)));
+        assertTrue(map.isOccupied(new Vector2d(2,3)));
+    }
+
+    @Test
+    public void exceptionTest(){
+        try {
+            map.place(new Animal(map));
+            map.place(new Animal(map));
+        }
+        catch (IllegalArgumentException e){
+            assertEquals("there already is an animal there",e.getMessage());
+        }
+    }
+
 }
