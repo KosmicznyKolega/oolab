@@ -1,5 +1,8 @@
 package agh.ics.oop;
 
+import agh.ics.oop.gui.App;
+import javafx.application.Application;
+
 public class World {
 
     public static Direction changeDir(String argument) {
@@ -50,6 +53,8 @@ public class World {
         }catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
         }
+
+        Application.launch(App.class, args);
     }
 
 }

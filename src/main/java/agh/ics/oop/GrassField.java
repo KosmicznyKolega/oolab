@@ -7,12 +7,10 @@ import java.util.Map;
 
 
 public class GrassField extends AbstractWorldMap {
-    private final Vector2d lowerLeft = new Vector2d(0, 0);
-    private final Vector2d upperRight;
     private Map<Vector2d, Grass> grasses = new HashMap<>();
+    private MapBoundary edges= new MapBoundary();
 
     public GrassField(int grassCount) {
-        this.upperRight = new Vector2d((int) Math.sqrt(grassCount * 10), (int) Math.sqrt(grassCount * 10));
         ArrayList<Vector2d> allPossiblePlaces = new ArrayList<>();
         for (int iterator1 = 0; iterator1 < (int) Math.sqrt(grassCount * 10); iterator1++) {
             for (int iterator2 = 0; iterator2 < (int) Math.sqrt(grassCount * 10); iterator2++) {
@@ -23,23 +21,17 @@ public class GrassField extends AbstractWorldMap {
         for (int iterator3 = 0; iterator3 < grassCount; iterator3++) {
             grasses.put(allPossiblePlaces.get(iterator3), new Grass(allPossiblePlaces.get(iterator3)));
         }
+        HashMap<Vector2d,Object> shallowCopy = new HashMap<Vector2d, Object>(grasses);
+        this.edges.addToMultiMap(shallowCopy);
     }
 
     @Override
     public Vector2d lowestLeft() {
-        Vector2d lowestLeftBoundary = lowerLeft;
-        for (Animal value : animals.values()) {
-            lowestLeftBoundary = value.getPosition().lowerLeft(lowestLeftBoundary);
-        }
-        return lowestLeftBoundary;
+        return edges.getLeftBoundary();
     }
     @Override
     public Vector2d uppestRight() {
-        Vector2d upperRightBoundary = upperRight;
-        for (Animal value : animals.values()) {
-            upperRightBoundary = value.getPosition().upperRight(upperRightBoundary);
-        }
-        return upperRightBoundary;
+        return edges.getRightBoundary();
     }
     @Override
     public boolean checkForAnyOtherObjects(Vector2d position) {
@@ -54,5 +46,12 @@ public class GrassField extends AbstractWorldMap {
     @Override
     public Object returnAnyOtherObjects(Vector2d position) {
         return grasses.get(position);
+    }
+    @Override
+    public boolean place(Animal animal){
+        super.place(animal);
+        animal.subscribe(edges);
+        edges.placeObject(animal.getPosition(),animal);
+    return true;
     }
 }

@@ -3,7 +3,7 @@ package agh.ics.oop;
 import java.util.HashMap;
 import java.util.Map;
 
-abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver{
+public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver{
     protected Map<Vector2d,Animal> animals = new HashMap<>();
 
     public boolean place(Animal animal) {
@@ -11,6 +11,7 @@ abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver{
             throw new IllegalArgumentException("there already is an animal there");
         }
         animals.put(animal.getPosition(),animal);
+        animal.subscribe(this);
         return true;
     }
 
@@ -49,7 +50,7 @@ abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver{
     }
 
     @Override
-    public void positionChanged(Vector2d oldPosition, Vector2d newPosition) {
+    public void positionChanged(Vector2d oldPosition, Vector2d newPosition,Object object) {
         if (!newPosition.equals(oldPosition)){
             animals.put(newPosition, animals.get(oldPosition));
             animals.remove(oldPosition);

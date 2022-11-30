@@ -15,7 +15,6 @@ public class Animal {
     public Animal(IWorldMap map, Vector2d initialPosition) {
         this.map = map;
         this.position = initialPosition;
-        this.subscribe((IPositionChangeObserver) map);
     }
 
     public void subscribe(IPositionChangeObserver map) {
@@ -25,9 +24,9 @@ public class Animal {
     public void unsubscribe(IPositionChangeObserver map) {
         IPositionChangeObservers.remove(map);
     }
-    private void notifySubscribers(Vector2d oldPosition, Vector2d newPosition){
+    private void notifySubscribers(Vector2d oldPosition, Vector2d newPosition, Object object){
         for (IPositionChangeObserver IPositionChangeObserver : IPositionChangeObservers){
-            IPositionChangeObserver.positionChanged(oldPosition, newPosition);
+            IPositionChangeObserver.positionChanged(oldPosition, newPosition,object);
         }
     }
 
@@ -85,7 +84,7 @@ public class Animal {
             case FORWARD -> changePosition(MoveDirection.FORWARD);
             case BACKWARD -> changePosition(MoveDirection.BACKWARD);
         }
-        notifySubscribers(oldPosition,position);
+        notifySubscribers(oldPosition,position,this);
     }
 
 
