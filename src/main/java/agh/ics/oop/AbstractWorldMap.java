@@ -15,10 +15,10 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
         return true;
     }
 
-    protected Vector2d lowestLeft() {
+    public Vector2d lowestLeft() {
         return new Vector2d(0, 0);
     }
-    protected Vector2d uppestRight(){
+    public Vector2d uppestRight(){
         return new Vector2d(10,10);
     }
 
